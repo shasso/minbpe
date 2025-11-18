@@ -134,6 +134,44 @@ to run the tests. (-v is verbose, slightly prettier).
 
 For those trying to study BPE, here is the advised progression exercise for how you can build your own minbpe step by step. See [exercise.md](exercise.md).
 
+## debugging and visualization
+
+Need help understanding how your tokenizer works? We provide comprehensive tools for visualizing and debugging tokenization:
+
+**Visualization Tool**: See exactly how your text is tokenized, what each token represents, and debug encoding issues:
+
+```bash
+# Visualize tokenization
+python visualize_tokenizer.py --model models/basic.model --text "your text here"
+
+# Compare multiple texts
+python visualize_tokenizer.py --compare "text1" "text2" "text3"
+
+# Analyze token distribution
+python visualize_tokenizer.py --model models/basic.model --analyze "your text"
+
+# Explain specific tokens
+python visualize_tokenizer.py --model models/basic.model --explain-token 258
+```
+
+**Examples Script**: Learn tokenization concepts with interactive examples:
+
+```bash
+python examples_tokenization.py
+```
+
+**Documentation**: Read [TOKENIZATION_GUIDE.md](TOKENIZATION_GUIDE.md) for:
+- Understanding BPE vs SentencePiece differences
+- Working with non-Latin scripts (Arabic, Hebrew, CJK, etc.)
+- Debugging common tokenization issues
+- Step-by-step troubleshooting workflows
+
+These tools are particularly useful when:
+- Your tokenizer output doesn't match expectations
+- Working with non-English or multi-script text
+- Debugging encoding/decoding issues
+- Understanding token-to-text mappings
+
 ## lecture
 
 I built the code in this repository in this [YouTube video](https://www.youtube.com/watch?v=zduSFxRajkE). You can also find this lecture in text form in [lecture.md](lecture.md).
